@@ -29,7 +29,6 @@ I apologise if I have misinterpreted the task. All of the below are easily chang
   - i.e. We want to know the periods on the days specified _not_ from, for example, 1000 to 1300.
 - We start at 00:00 and the last period is 23:30 so there should be 48 periods in a day.
 - UTC timezone.
-  - This is just a habit I have gotten in to :)
 - It would be better to use the existing tools rather than re-invent the wheel.
   - I assumed the exercise should reflect what I would do in the real world.
   - Normally I would try and find existing libraries and tools that do the job (i.e. Pandas) and not re-inventing the wheel.
@@ -67,19 +66,17 @@ I thought it would be a good idea to explain how I went about this and what I di
 
 ## Future Work
 
-If given more time I would:
+To continue this project we could:
 
 - Clarify the above assumptions and adjust accordingly
 - Host this somewhere.
   - Probably a lambda or in GCP with Cloud Functions behind an API gateway.
   - Using Terraform to set up infrastructure.
 - Add a UI.
-  - React or Vuejs
+  - React or VueJS
   - Host in a S3 bucket as a static site or GCP object storage.
 
 ## Running Locally
-
-I like to use poetry for package management.
 
 ```bash
 # OPTION 1: start the poetry shell (venv)
