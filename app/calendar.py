@@ -4,9 +4,11 @@ from datetime import date
 
 def generate_calendar(start_date: date, end_date: date) -> pd.DataFrame:
     """
-    TODO add comments.
+    Gets a calendar divided into 30 minute periods.
+    - Runs from 00:00 to 2330
+    - Is *not* inclusive. So goes up to but not including the last day
     """
-    dr = pd.date_range(
+    date_ranges = pd.date_range(
         start=start_date,
         end=end_date,
         freq="30min",
@@ -14,13 +16,13 @@ def generate_calendar(start_date: date, end_date: date) -> pd.DataFrame:
         inclusive="left",
     )
 
-    raw_data = [
+    mapped_data = [
         {
             "Date": time_stamp.date(),
             "Time": time_stamp.time(),
             "Period": idx + 1,
         }
-        for idx, time_stamp in enumerate(dr)
+        for idx, time_stamp in enumerate(date_ranges)
     ]
 
-    return pd.DataFrame(raw_data)
+    return pd.DataFrame(mapped_data)
