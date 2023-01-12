@@ -25,6 +25,7 @@ I apologise if I have misinterpreted the task. All of the below are easily chang
 - Dates are not inclusive. So 1st January to 3rd January includes 1st and 2nd but not the 3rd.
 - Query strings are used for parameters rather than path variables.
 - Frequency will always be 30 minutes and doesn't need to be a variable or collected from user input.
+- Negative date ranges (i.e. 2023-01-01 to 2020-01-01) return empty rather than an exception.
 - Only dealing with full days
   - i.e. We want to know the periods on the days specified _not_ from, for example, 1000 to 1300.
 - We start at 00:00 and the last period is 23:30 so there should be 48 periods in a day.

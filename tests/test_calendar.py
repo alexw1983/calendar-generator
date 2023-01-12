@@ -26,3 +26,11 @@ def test_generate_calendar_for_a_72_hour_range_should_match_predicted_data(
 
     # Assert
     pd.testing.assert_frame_equal(actual, sample_data_for_72_hour_range)
+
+
+def test_generate_calendar_for_a_negative_range_should_return_empty():
+    # Act
+    actual = generate_calendar(fourth_of_january, first_of_january)
+
+    # Assert
+    pd.testing.assert_frame_equal(pd.DataFrame([]), actual)
